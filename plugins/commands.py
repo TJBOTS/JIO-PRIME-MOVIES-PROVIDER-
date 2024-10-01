@@ -185,7 +185,9 @@ async def start(client:Client, message):
                         ],[
                             InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
                             InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
-                        ]] 
+                        ],[
+                            InlineKeyboardButton('💫 CREATOR 💫', url='https://t.me/Prime_Nayem')
+                        ]]
                         reply_markup = InlineKeyboardMarkup(buttons)
                         m=await message.reply_sticker("CAACAgUAAxkBAAEKVaxlCWGs1Ri6ti45xliLiUeweCnu4AACBAADwSQxMYnlHW4Ls8gQMAQ") 
                         await asyncio.sleep(1)
@@ -214,7 +216,9 @@ async def start(client:Client, message):
                         ],[
                             InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
                             InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
-                        ]] 
+                        ],[
+                            InlineKeyboardButton('💫 CREATOR 💫', url='https://t.me/Prime_Nayem')
+                        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgUAAxkBAAEKVaxlCWGs1Ri6ti45xliLiUeweCnu4AACBAADwSQxMYnlHW4Ls8gQMAQ") 
         await asyncio.sleep(1)
@@ -276,7 +280,9 @@ async def start(client:Client, message):
                         ],[
                             InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
                             InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
-                        ]] 
+                        ],[
+                            InlineKeyboardButton('💫 CREATOR 💫', url='https://t.me/Prime_Nayem')
+                        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         return await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
             reply_markup=reply_markup,
