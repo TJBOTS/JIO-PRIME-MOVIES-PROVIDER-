@@ -57,7 +57,7 @@ class script(object):
 
     LOGO = """
 
-BOT WORKING PROPERLY 🔥"""
+PRIME BOT WORKING PROPERLY 🔥"""
     
     RESTART_TXT = """
 <b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
@@ -345,9 +345,9 @@ Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴍᴀᴋᴇ ᴍᴇ ᴀ�
 
     SOURCE_TXT = """<b>
 NOTE:
-- ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ʜᴇʀᴇ ◉› :<blockquote><a href="https://t.me/Prime_Botz"></a>𝐏𝐑𝐈𝐌𝐄 𝐁𝐎𝐓𝐳 🔥</blockquote>
+- ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ʜᴇʀᴇ ◉› :<blockquote><a href="https://t.me/Prime_Botz">𝐏𝐑𝐈𝐌𝐄 𝐁𝐎𝐓𝐳 🔥</a></blockquote>
 
-developer : Mr.Jisshu
+Developer : 𝗠𝗥.𝗣𝗥𝗜𝗠𝗘
 </b>""" 
     GROUP_C_TEXT = """<b><blockquote>
  --------------Set Verify-------------
