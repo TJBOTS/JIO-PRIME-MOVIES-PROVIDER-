@@ -117,7 +117,7 @@ User - {}
 ⭐ Rating: {rating} / 10</b>
 """
 
-    FILE_CAPTION = """<b>{file_name}\n\n𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/Prime_Movies4U">𝐏𝐑𝐈𝐌𝐄 𝐌𝐎𝐕𝐈𝐄 ✨</a>」</b>"""
+    FILE_CAPTION = """<b>⚡File uploaded by [𝐏𝐑𝐈𝐌𝐄 𝐌𝐎𝐕𝐈𝐄 ✨](https://t.me/Prime_Movies4U)</b>⚡\n\n📂 Fɪʟᴇɴᴀᴍᴇ : <i><a href='https://telegram.me/Prime_Movies4U'>{file_name}</a></i>\n\n\n» 𝗡𝗘𝗪 𝗠𝗢𝗩𝗜𝗘𝗦 ➠ <a href=https://t.me/+ZceEtnx2WftjYWU1>𝐏𝐑𝐈𝐌𝐄 𝐌𝐎𝐕𝐈𝐄𝐒 𝐀𝐃𝐃𝐀</a>\n\n\n𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 : <a href=https://t.me/Prime_Botz>𝐏𝐑𝐈𝐌𝐄 𝐁𝐎𝐓𝐳 🔥</a></b>""" 
     
 
     ALRT_TXT = """ᴊᴀʟᴅɪ ʏᴇʜᴀ sᴇ ʜᴀᴛᴏ !"""
