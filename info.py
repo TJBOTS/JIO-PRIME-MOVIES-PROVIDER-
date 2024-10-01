@@ -25,24 +25,24 @@ MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/+OG3sftDEbZ9kMz
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002110875043').split()]
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://cafacav744:xZI6NgRN4vN0U89e@cluster0.lfy0c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 #----------- There will be channel id add in all these ---------
 LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002196408894'))  
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL',''))
-DELETE_CHANNELS = int(environ.get('DELETE_CHANNELS',''))
-LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', ''))
-auth_channel = environ.get('AUTH_CHANNEL', '')
-SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', ''))
-request_channel = environ.get('REQUEST_CHANNEL', '')
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', ''))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/') #Support group link ( make sure bot is admin )
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1002152618409'))
+DELETE_CHANNELS = int(environ.get('DELETE_CHANNELS','-1002184630716'))
+LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002196408894'))
+auth_channel = environ.get('AUTH_CHANNEL', '-1002043502363')
+SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002418972891'))
+request_channel = environ.get('REQUEST_CHANNEL', '-1002242875858')
+MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002242875858'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Movies_Request_Group_BD') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-IS_VERIFY = is_enabled('IS_VERIFY', True)
+IS_VERIFY = is_enabled('IS_VERIFY', False)
 #---------------------------------------------------------------
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
