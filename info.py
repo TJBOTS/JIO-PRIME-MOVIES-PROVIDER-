@@ -36,10 +36,10 @@ BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1002152618409'))
 DELETE_CHANNELS = int(environ.get('DELETE_CHANNELS','-1002184630716'))
 LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002196408894'))
 auth_channel = environ.get('AUTH_CHANNEL', '-1002043502363')
-SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002418972891'))
+SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002245813234'))
 request_channel = environ.get('REQUEST_CHANNEL', '-1002242875858')
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002242875858'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Movies_Request_Group_BD') #Support group link ( make sure bot is admin )
+MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002110806325'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+QuDDYUqI_r01ODg1') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 IS_VERIFY = is_enabled('IS_VERIFY', False)
