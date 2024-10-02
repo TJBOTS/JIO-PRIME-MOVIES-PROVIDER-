@@ -830,7 +830,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )      
     elif query.data == "seeplans":
         btn = [[
-            InlineKeyboardButton('🍁 𝗖𝗹𝗶𝗰𝗸 𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘀 & 𝗣𝗿𝗶𝗰𝗲𝘀 ১🍁', callback_data='free')
+            InlineKeyboardButton('☆📸 𝙎𝙚𝙣𝙙 𝙋𝙖𝙮𝙢𝙚𝙣𝙩 𝙨𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩 📸☆', url=f'https://t.me/Prime_Admin_Support_BOT')
         ],[
             InlineKeyboardButton('• 𝗖𝗹𝗼𝘀𝗲 •', callback_data='close_data')
         ]]
@@ -845,7 +845,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 	)
     elif query.data == "free":
         buttons = [[
-            InlineKeyboardButton('☆📸 𝙎𝙚𝙣𝙙 𝙨𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩 📸☆', url=f'https://t.me/JisshuDeveloperBot')
+            InlineKeyboardButton('☆📸 𝙎𝙚𝙣𝙙 𝙋𝙖𝙮𝙢𝙚𝙣𝙩 𝙨𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩 📸☆', url=f'https://t.me/Prime_Admin_Support_BOT')
         ],[
             InlineKeyboardButton('💎 𝗖𝘂𝘀𝘁𝗼𝗺 𝗣𝗹𝗮𝗻 💎', callback_data='other')
         ],[
@@ -866,7 +866,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     #jisshu
     elif query.data == "broze":
        buttons = [[
-            InlineKeyboardButton('🍁 𝗖𝗹𝗶𝗰𝗸 𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘀 & 𝗣𝗿𝗶𝗰𝗲𝘀 ২🍁', callback_data='free')
+            InlineKeyboardButton('🍁 𝗖𝗹𝗶𝗰𝗸 𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘀 & 𝗣𝗿𝗶𝗰𝗲𝘀 🍁', callback_data='free')
         ], [
             InlineKeyboardButton('• 𝗖𝗹𝗼𝘀𝗲 •', callback_data='close_data')
        ]]
@@ -883,7 +883,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "other":
         buttons = [[
-            InlineKeyboardButton('☎️ 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 𝗢𝘄𝗻𝗲𝗿 𝗧𝗼 𝗞𝗻𝗼𝘄 𝗠𝗼𝗿𝗲', user_id = ADMINS[0])
+            InlineKeyboardButton('☎️ 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 𝗢𝘄𝗻𝗲𝗿 𝗧𝗼 𝗞𝗻𝗼𝘄 𝗠𝗼𝗿𝗲', url=f'https://t.me/Prime_Admin_Support_ProBot')
         ],[
             InlineKeyboardButton('• 𝗕𝗮𝗰𝗸 •', callback_data='free')
         ]]
