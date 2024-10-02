@@ -159,7 +159,7 @@ async def plan(client, message):
     users = message.from_user.mention 
     btn = [[
 	
-        InlineKeyboardButton("🍁 𝗖𝗹𝗶𝗰𝗸 𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘀 & 𝗣𝗿𝗶𝗰𝗲𝘀 🍁", callback_data='free')],[InlineKeyboardButton("❌ ᴄʟᴏꜱᴇ ❌", callback_data="close_data")
+        InlineKeyboardButton("☆📸 𝙎𝙚𝙣𝙙 𝙋𝙖𝙮𝙢𝙚𝙣𝙩 𝙨𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩 📸☆", url=f'https://t.me/Prime_Admin_Support_BOT')],[InlineKeyboardButton("❌ ᴄʟᴏꜱᴇ ❌", callback_data="close_data")
     ]]
     await message.reply_photo(photo="https://envs.sh/W2m.jpg", caption=script.PREPLANS_TXT.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(btn))
     
