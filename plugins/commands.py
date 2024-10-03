@@ -308,9 +308,9 @@ async def start(client:Client, message):
             verify = await get_shortlink(f"https://telegram.me/{temp.U_NAME}?start=notcopy_{user_id}_{verify_id}_{file_id}", grp_id, is_second_shortener, is_third_shortener , pm_mode=pm_mode)
             buttons = [[
                 InlineKeyboardButton(text="✅ ᴠᴇʀɪғʏ ✅", url=verify),
-                InlineKeyboardButton(text="ʜᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ❓", url=settings['tutorial'])
+                InlineKeyboardButton(text="❔ʜᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ❓", url=settings['tutorial'])
                 ],[
-                InlineKeyboardButton(text="😁 ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ - ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪғʏ 😁", callback_data='seeplans'),
+                InlineKeyboardButton(text="⭐ 𝗥𝗲𝗺𝗼𝘃𝗲 𝗔𝗱𝘀 𝗚𝗲𝘁 𝗗𝗶𝗿𝗲𝗰𝘁 𝗙𝗶𝗹𝗲 ⭐", callback_data='seeplans'),
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             if await db.user_verified(user_id): 
