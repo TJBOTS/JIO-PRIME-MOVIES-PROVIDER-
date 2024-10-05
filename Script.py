@@ -210,6 +210,7 @@ User - {}
 **🎃 Genres:** {genres}
 **📆 Year:** {year}
 **⭐ Rating:** {rating} / 10
+**🔥 POWERED BY @Prime_Botz 🔥
 </b>"""
 
     PREPLANS_TXT = """<b>👋 ʜᴇʏ {},
