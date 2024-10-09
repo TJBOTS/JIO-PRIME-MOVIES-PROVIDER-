@@ -80,7 +80,7 @@ async def send_movie_updates(bot, file_name, caption, file_id):
         movie_update_channel = await db.movies_update_channel_id()    
         btn = [
             [InlineKeyboardButton('Get File', url=f'https://t.me/{temp.U_NAME}?start=pm_mode_file_{ADMINS[0]}_{file_id}')],
-            [InlineKeyboardButton('🔰𝗠𝗼𝘃𝗶𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗿𝗼𝘂𝗽🔰', url=get_movie_group_link())]
+            [InlineKeyboardButton('🔰𝗠𝗼𝘃𝗶𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗿𝗼𝘂𝗽🔰', url=GRP_LNK)]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
         if poster_url:
