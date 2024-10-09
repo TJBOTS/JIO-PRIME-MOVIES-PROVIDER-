@@ -79,7 +79,8 @@ async def send_movie_updates(bot, file_name, caption, file_id):
         caption_message = f"#New_File_Added ✅\n\nFile_Name:- <code>{movie_name}</code>\n\nLanguage:- {language}\n\nQuality:- {quality}"    
         movie_update_channel = await db.movies_update_channel_id()    
         btn = [
-            [InlineKeyboardButton('Get File', url=f'https://t.me/{temp.U_NAME}?start=pm_mode_file_{ADMINS[0]}_{file_id}')]
+            [InlineKeyboardButton('Get File', url=f'https://t.me/{temp.U_NAME}?start=pm_mode_file_{ADMINS[0]}_{file_id}')],
+            [InlineKeyboardButton('HOW TO DOWNLOAD', url='https://t.me/Prime_Movie_Watch_Dawnload/75')]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
         if poster_url:
@@ -92,5 +93,3 @@ async def send_movie_updates(bot, file_name, caption, file_id):
     except Exception as e:
         print('Failed to send movie update. Error - ', e)
         await bot.send_message(LOG_CHANNEL, f'Failed to send movie update. Error - {e}')
-    
-  
