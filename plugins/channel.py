@@ -14,8 +14,6 @@ from database.users_chats_db import db
 processed_movies = set()
 media_filter = filters.document | filters.video
 
-media_filter = filters.document | filters.video
-
 @Client.on_message(filters.chat(CHANNELS) & media_filter)
 async def media(bot, message):
     bot_id = bot.me.id
@@ -32,12 +30,12 @@ async def get_imdb(file_name):
     imdb_file_name = await movie_name_format(file_name)
     imdb = await get_poster(imdb_file_name)
     if imdb:
-        return imdb.get('poster')
-    return None
+        return imdb.get('poster'), imdb.get('title'), imdb.get('genres'), imdb.get('year'), imdb.get('rating')
+    return None, None, None, None, None
     
 async def movie_name_format(file_name):
-  filename = re.sub(r'http\S+', '', re.sub(r'@\w+|#\w+', '', file_name).replace('_', ' ').replace('[', '').replace(']', '').replace('(', '').replace(')', '').replace('{', '').replace('}', '').replace('.', ' ').replace('@', '').replace(':', '').replace(';', '').replace("'", '').replace('-', '').replace('!', '')).strip()
-  return filename
+    filename = re.sub(r'http\S+', '', re.sub(r'@\w+|#\w+', '', file_name).replace('_', ' ').replace('[', '').replace(']', '').replace('(', '').replace(')', '').replace('{', '').replace('}', '').replace('.', ' ').replace('@', '').replace(':', '').replace(';', '').replace("'", '').replace('-', '').replace('!', '')).strip()
+    return filename
 
 async def check_qualities(text, qualities: list):
     quality = []
@@ -61,28 +59,45 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             if season:
                 season = season.group(1) if season else None       
                 file_name = file_name[:file_name.find(season) + 1]
+        
         qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", 
                      "camrip", "WEB-DL" "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", 
                      "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
         quality = await check_qualities(caption.lower(), qualities) or "HDRip"
+        
         language = ""
         nb_languages = ["Hindi", "Bengali", "English", "Marathi", "Tamil", "Telugu", "Malayalam", "Kannada", "Punjabi", "Gujrati", "Korean", "Japanese", "Bhojpuri", "Dual", "Multi"]    
         for lang in nb_languages:
             if lang.lower() in caption.lower():
                 language += f"{lang}, "
         language = language.strip(", ") or "Not Idea"
+        
         movie_name = await movie_name_format(file_name)    
         if movie_name in processed_movies:
             return 
-        processed_movies.add(movie_name)    
-        poster_url = await get_imdb(movie_name)
-        caption_message = f"#New_File_Added ✅\n\nFile_Name:- <code>{movie_name}</code>\n\nLanguage:- {language}\n\nQuality:- {quality}"    
+        processed_movies.add(movie_name)
+        
+        poster_url, title, genres, release_date, rating = await get_imdb(movie_name)
+        
+        caption_message = (
+            f"🎬 <b>Title:</b> <code>{title or movie_name}</code>\n"
+            f"🗂 <b>Genres:</b> {genres or 'Unknown'}\n"
+            f"📆 <b>Year:</b> {release_date or 'Unknown'}\n"
+            f"⭐ <b>IMDb Rating:</b> {rating or 'N/A'} / 10\n\n"
+            f"🔊 <b>Language:</b> {language}\n"
+            f"💿 <b>Quality:</b> {quality}\n\n"
+            f"📌 <b>Note:</b> If you need to get all quality files, please copy the above file name and paste it into the below movie search group.\n\n"
+            f"🎥 <b>Download Link:</b> Click the button below to get the file!"
+        )
+        
         movie_update_channel = await db.movies_update_channel_id()    
+        
         btn = [
-            [InlineKeyboardButton('Get File', url=f'https://t.me/{temp.U_NAME}?start=pm_mode_file_{ADMINS[0]}_{file_id}')],
-            [InlineKeyboardButton('🔰 𝗠𝗼𝘃𝗶𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗿𝗼𝘂𝗽 🔰', url='https://t.me/+OG3sftDEbZ9kMzFl')]
+            [InlineKeyboardButton('🎥 Get File', url=f'https://t.me/{temp.U_NAME}?start=pm_mode_file_{ADMINS[0]}_{file_id}')],
+            [InlineKeyboardButton('🔰 Movie Search Group', url='https://t.me/+OG3sftDEbZ9kMzFl')]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
+        
         if poster_url:
             await bot.send_photo(movie_update_channel if movie_update_channel else MOVIE_UPDATE_CHANNEL, 
                                  photo=poster_url, caption=caption_message, reply_markup=reply_markup)
