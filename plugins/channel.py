@@ -1,3 +1,9 @@
+#don't remove credit please 
+#this code design by https://t.me/Prime_Botz 
+#developer https://t.me/Prime_Nayem
+#Main code JISSHU_BOTS
+#Let me know if there is any problem while editing it https://t.me/Prime_Nayem
+#thank you for using this Code 
 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
