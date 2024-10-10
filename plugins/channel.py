@@ -86,15 +86,15 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             f"⭐ <b>IMDb Rating:</b> {rating or 'N/A'} / 10\n\n"
             f"🔊 <b>Language:</b> {language}\n"
             f"💿 <b>Quality:</b> {quality}\n\n"
-            f"📌 <b>Note:</b> If you need to get all quality files, please copy the above file name and paste it into the below movie search group.\n\n"
-            f"🎥 <b>Download Link:</b> Click the button below to get the file!"
+            f"📌 <b>Note:</b> 𝙄𝙛 𝙮𝙤𝙪 𝙣𝙚𝙚𝙙 𝙩𝙤 𝙜𝙚𝙩 𝙖𝙡𝙡 𝙦𝙪𝙖𝙡𝙞𝙩𝙮 𝙛𝙞𝙡𝙚𝙨, 𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙤𝙥𝙮 𝙩𝙝𝙚 𝙖𝙗𝙤𝙫𝙚 𝙛𝙞𝙡𝙚 𝙣𝙖𝙢𝙚 𝙖𝙣𝙙 𝙥𝙖𝙨𝙩𝙚 𝙞𝙩 𝙞𝙣𝙩𝙤 𝙩𝙝𝙚 𝙗𝙚𝙡𝙤𝙬 𝙢𝙤𝙫𝙞𝙚 𝙨𝙚𝙖𝙧𝙘𝙝 𝙜𝙧𝙤𝙪𝙥 🔰.\n\n"
+            f"🎥 <b>Download Link:</b> 𝘾𝙡𝙞𝙘𝙠 𝙩𝙝𝙚 𝙗𝙪𝙩𝙩𝙤𝙣 𝙗𝙚𝙡𝙤𝙬 𝙩𝙤 𝙜𝙚𝙩 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚 🎥!"
         )
         
         movie_update_channel = await db.movies_update_channel_id()    
         
         btn = [
-            [InlineKeyboardButton('🎥 Get File', url=f'https://t.me/{temp.U_NAME}?start=pm_mode_file_{ADMINS[0]}_{file_id}')],
-            [InlineKeyboardButton('🔰 Movie Search Group', url='https://t.me/+OG3sftDEbZ9kMzFl')]
+            [InlineKeyboardButton('🎥 𝗚𝗲𝘁 𝗙𝗶𝗹𝗲 🎥', url=f'https://t.me/{temp.U_NAME}?start=pm_mode_file_{ADMINS[0]}_{file_id}')],
+            [InlineKeyboardButton('🔰 𝗠𝗼𝘃𝗶𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗿𝗼𝘂𝗽 🔰', url='https://t.me/+OG3sftDEbZ9kMzFl')]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
         
