@@ -10,6 +10,7 @@ from info import CHANNELS, MOVIE_UPDATE_CHANNEL, ADMINS , LOG_CHANNEL
 from database.ia_filterdb import save_file, unpack_new_file_id
 from utils import get_poster, temp
 import re
+import os
 from database.users_chats_db import db
 
 processed_movies = set()
