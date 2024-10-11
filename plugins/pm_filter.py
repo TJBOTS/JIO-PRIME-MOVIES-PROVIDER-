@@ -1422,6 +1422,7 @@ async def ai_spell_check(wrong_name):
             return movie
         movie_list.remove(movie)
     return
+	
 async def auto_filter(client, msg, spoll=False, pm_mode=False):
     if not spoll:
         message = msg
