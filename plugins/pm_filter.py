@@ -1436,6 +1436,9 @@ async def auto_filter(client, msg, spoll=False, pm_mode=False):
         # Query থেকে ব্যবহারের জন্য ডেটা বের করা হচ্ছে
         query = msg  # যেহেতু msg থেকে ব্যবহার হচ্ছে, এটিকে query হিসাবে ব্যবহার করা যেতে পারে
         
+        # remaining_seconds সংজ্ঞায়িত করা হচ্ছে
+        remaining_seconds = 300  # উদাহরণস্বরূপ, ৫ মিনিট (৩০০ সেকেন্ড)
+        
         if not files:
             if settings["spell_check"]:
                 ai_sts = await msg.reply_text(f'ᴄʜᴇᴄᴋɪɴɢ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ...')
