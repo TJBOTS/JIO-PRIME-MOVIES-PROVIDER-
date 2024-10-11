@@ -1,5 +1,4 @@
 import re
-import os
 from os import environ,getenv
 from Script import script
 
@@ -40,7 +39,6 @@ auth_channel = environ.get('AUTH_CHANNEL', '-1002043502363')
 SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002245813234'))
 request_channel = environ.get('REQUEST_CHANNEL', '-1002296355008')
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002110806325'))
-GRP_LNK = os.getenv('GRP_LNK', 'https://t.me/Movies_Request_Group_BD')
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+QuDDYUqI_r01ODg1') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
 #---------------------------------------------------------------
