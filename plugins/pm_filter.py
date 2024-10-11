@@ -1,5 +1,6 @@
 import asyncio
 import re
+import time
 import math
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
@@ -1429,15 +1430,22 @@ async def auto_filter(client, msg, spoll=False, pm_mode=False):
         search = message.text
         chat_id = message.chat.id
         settings = await get_settings(chat_id, pm_mode=pm_mode)
+        
+        # সার্চ শুরু করার আগে সময় নেয়া হচ্ছে
+        start_time = time.time()
+
         searching_msg = await msg.reply_text(f'🔎 sᴇᴀʀᴄʜɪɴɢ {search}')
         files, offset, total_results = await get_search_results(search)
         await searching_msg.delete()
+
+        # সার্চ শেষ হবার সময় নেওয়া হচ্ছে
+        end_time = time.time()
+
+        # সার্চে কত সময় লেগেছে তা গণনা করা হচ্ছে
+        search_time = end_time - start_time
+        remaining_seconds = int(search_time)  # সার্চের সময়কে সেকেন্ডে দেখানো হচ্ছে
         
-        # Query থেকে ব্যবহারের জন্য ডেটা বের করা হচ্ছে
-        query = msg  # যেহেতু msg থেকে ব্যবহার হচ্ছে, এটিকে query হিসাবে ব্যবহার করা যেতে পারে
-        
-        # remaining_seconds সংজ্ঞায়িত করা হচ্ছে
-        remaining_seconds = 300  # উদাহরণস্বরূপ, ৫ মিনিট (৩০০ সেকেন্ড)
+        query = msg
         
         if not files:
             if settings["spell_check"]:
@@ -1447,7 +1455,7 @@ async def auto_filter(client, msg, spoll=False, pm_mode=False):
                     await asyncio.sleep(2)
                     msg.text = is_misspelled
                     await ai_sts.delete()
-                    return await auto_filter(client, msg)  # পুনরায় query পাস করার প্রয়োজন নেই
+                    return await auto_filter(client, msg)
                 await ai_sts.delete()
                 return await advantage_spell_chok(msg)
             return
