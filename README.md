@@ -90,7 +90,7 @@
 <br>
 <br>
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Jisshubots/Jisshu-filter-bot&branch=main&name=Jisshu-filter-bot )
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Prime5522/JIO-PRIME-MOVIES-PROVIDER-&branch=PRIME-BOTz&name=JIO-PRIME-MOVIES-PROVIDER)
 </details>
 
 <details><summary>Deploy To Render</summary>
