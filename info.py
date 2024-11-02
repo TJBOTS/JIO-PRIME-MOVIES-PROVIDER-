@@ -44,14 +44,14 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+QuDDYUqI_r01ODg1') #Su
 #---------------------------------------------------------------
 IS_VERIFY = is_enabled('IS_VERIFY', True)
 #---------------------------------------------------------------
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/Prime_Channel_Movies_Dawnload/13")
+TUTORIAL = environ.get("TUTORIAL", "https://t.me/Prime_Movie_Watch_Dawnload/76")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
-SHORTENER_API = environ.get("SHORTENER_API", "d1e52488bac3d8297d89f895ed8ec64fd04253f8")
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", 'droplink.co')
-SHORTENER_API2 = environ.get("SHORTENER_API2", "d1e52488bac3d8297d89f895ed8ec64fd04253f8")
-SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", 'droplink.co')
-SHORTENER_API3 = environ.get("SHORTENER_API3", "d1e52488bac3d8297d89f895ed8ec64fd04253f8")
-SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", 'droplink.co')
+SHORTENER_API = environ.get("SHORTENER_API", "99b8fbf7c183af5fbc81b798a6f627400aa6d843")
+SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", 'teraboxlinks.com')
+SHORTENER_API2 = environ.get("SHORTENER_API2", "99b8fbf7c183af5fbc81b798a6f627400aa6d843")
+SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", 'teraboxlinks.com')
+SHORTENER_API3 = environ.get("SHORTENER_API3", "99b8fbf7c183af5fbc81b798a6f627400aa6d843")
+SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", 'teraboxlinks.com')
 TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "86400"))
 THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "86400"))
 #---------------------------------------------------------------
