@@ -52,8 +52,8 @@ SHORTENER_API2 = environ.get("SHORTENER_API2", "99b8fbf7c183af5fbc81b798a6f62740
 SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", 'teraboxlinks.com')
 SHORTENER_API3 = environ.get("SHORTENER_API3", "99b8fbf7c183af5fbc81b798a6f627400aa6d843")
 SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", 'teraboxlinks.com')
-TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "86400"))
-THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "86400"))
+TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "300"))
+THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "300"))
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 LANGUAGES = ["hindi", "english", "bangla", "tamil", "kannada", "malayalam", "bengali", "Telugu", "gujarati", "punjabi"]
@@ -111,9 +111,9 @@ URL = environ.get("FQDN", "")
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 #-------------------- নতুন কোডটি এখানে এড করা হলো ------------------------
-SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', False))  # নতুন কোড
+SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', True))  # নতুন কোড
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'teraboxlinks.com')  # নতুন কোড
-SHORTLINK_API = environ.get('SHORTLINK_API', '')  # নতুন কোড
+SHORTLINK_API = environ.get('SHORTLINK_API', '99b8fbf7c183af5fbc81b798a6f627400aa6d843')  # নতুন কোড
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 SETTINGS = {
