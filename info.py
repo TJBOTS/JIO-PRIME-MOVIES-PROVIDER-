@@ -42,7 +42,7 @@ MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002110806325')
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+QuDDYUqI_r01ODg1') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-IS_VERIFY = is_enabled('IS_VERIFY', False)
+IS_VERIFY = is_enabled('IS_VERIFY', True)
 #---------------------------------------------------------------
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/Prime_Movie_Watch_Dawnload/76")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
@@ -52,8 +52,8 @@ SHORTENER_API2 = environ.get("SHORTENER_API2", "99b8fbf7c183af5fbc81b798a6f62740
 SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", 'teraboxlinks.com')
 SHORTENER_API3 = environ.get("SHORTENER_API3", "99b8fbf7c183af5fbc81b798a6f627400aa6d843")
 SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", 'teraboxlinks.com')
-TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "300"))
-THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "300"))
+TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "14400"))
+THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "14400"))
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 LANGUAGES = ["hindi", "english", "bangla", "tamil", "kannada", "malayalam", "bengali", "Telugu", "gujarati", "punjabi"]
@@ -106,7 +106,7 @@ if 'DYNO' in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-URL = environ.get("FQDN", "")
+URL = environ.get("FQDN", "https://imperial-roda-primemoviefilterbot-6022ed58.koyeb.app/")
 
 #---------------------------------------------------------------
 #---------------------------------------------------------------
