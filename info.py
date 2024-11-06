@@ -38,7 +38,7 @@ LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '0'))
 auth_channel = environ.get('AUTH_CHANNEL', '0')
 SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002245813234'))
 request_channel = environ.get('REQUEST_CHANNEL', '-1002296355008')
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', ''))
+MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1001786924542'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+QuDDYUqI_r01ODg1') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
 #---------------------------------------------------------------
