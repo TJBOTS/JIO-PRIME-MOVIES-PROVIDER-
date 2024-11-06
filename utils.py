@@ -50,6 +50,19 @@ async def is_req_subscribed(bot, query):
             return True
     return False
 
+# 🌟 Adding the check_verification function here
+
+async def check_verification(user_id):
+    """
+    Function to check if a user has verified their identity.
+    Returns True if the user is verified, otherwise False.
+    """
+    # Example logic for verification check
+    user = await db.get_user(user_id)
+    if user and user.get("verified"):
+        return True
+    return False
+
 async def get_poster(query, bulk=False, id=False, file=None):
     if not id:
         query = (query.strip()).lower()
