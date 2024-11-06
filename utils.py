@@ -1,26 +1,25 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, IS_VERIFY , SETTINGS , START_IMG
+from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, IS_VERIFY, SETTINGS, START_IMG
 from imdb import Cinemagoer
 import asyncio
 from pyrogram.types import Message
 from pyrogram import enums
-import pytz, re, os 
+import pytz, re, os
 from shortzy import Shortzy
 from datetime import datetime
 from typing import Any
 from database.users_chats_db import db
 
-
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 BANNED = {}
-imdb = Cinemagoer() 
- 
+imdb = Cinemagoer()
+
 class temp(object):
     ME = None
-    CURRENT=int(os.environ.get("SKIP", 2))
+    CURRENT = int(os.environ.get("SKIP", 2))
     CANCEL = False
     U_NAME = None
     B_NAME = None
@@ -28,13 +27,15 @@ class temp(object):
     SETTINGS = {}
     FILES_ID = {}
     USERS_CANCEL = False
-    GROUPS_CANCEL = False    
+    GROUPS_CANCEL = False
     CHAT = {}
     BANNED_USERS = []
     BANNED_CHATS = []
+
 def formate_file_name(file_name):
     file_name = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file_name.split()))
     return file_name
+
 async def is_req_subscribed(bot, query):
     if await db.find_join_req(query.from_user.id):
         return True
@@ -67,12 +68,12 @@ async def get_poster(query, bulk=False, id=False, file=None):
         if not movieid:
             return None
         if year:
-            filtered=list(filter(lambda k: str(k.get('year')) == str(year), movieid))
+            filtered = list(filter(lambda k: str(k.get('year')) == str(year), movieid))
             if not filtered:
                 filtered = movieid
         else:
             filtered = movieid
-        movieid=list(filter(lambda k: k.get('kind') in ['movie', 'tv series'], filtered))
+        movieid = list(filter(lambda k: k.get('kind') in ['movie', 'tv series'], filtered))
         if not movieid:
             movieid = filtered
         if bulk:
@@ -112,36 +113,36 @@ async def get_poster(query, bulk=False, id=False, file=None):
         "certificates": list_to_str(movie.get("certificates")),
         "languages": list_to_str(movie.get("languages")),
         "director": list_to_str(movie.get("director")),
-        "writer":list_to_str(movie.get("writer")),
-        "producer":list_to_str(movie.get("producer")),
-        "composer":list_to_str(movie.get("composer")) ,
-        "cinematographer":list_to_str(movie.get("cinematographer")),
+        "writer": list_to_str(movie.get("writer")),
+        "producer": list_to_str(movie.get("producer")),
+        "composer": list_to_str(movie.get("composer")),
+        "cinematographer": list_to_str(movie.get("cinematographer")),
         "music_team": list_to_str(movie.get("music department")),
         "distributors": list_to_str(movie.get("distributors")),
         'release_date': date,
         'year': movie.get('year'),
         'genres': list_to_str(movie.get("genres")),
-        'poster': movie.get('full-size cover url' , START_IMG),
+        'poster': movie.get('full-size cover url', START_IMG),
         'plot': plot,
         'rating': str(movie.get("rating")),
-        'url':f'https://www.imdb.com/title/tt{movieid}'
+        'url': f'https://www.imdb.com/title/tt{movieid}'
     }
 
 async def users_broadcast(user_id, message, is_pin):
     try:
-        m=await message.copy(chat_id=user_id)
+        m = await message.copy(chat_id=user_id)
         if is_pin:
             await m.pin(both_sides=True)
         return True, "Success"
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        return await users_broadcast(user_id, message)
+        return await users_broadcast(user_id, message, is_pin)
     except InputUserDeactivated:
         await db.delete_user(int(user_id))
-        logging.info(f"{user_id}-Removed from Database, since deleted account.")
+        logging.info(f"{user_id} - Removed from Database, since deleted account.")
         return False, "Deleted"
     except UserIsBlocked:
-        logging.info(f"{user_id} -Blocked the bot.")
+        logging.info(f"{user_id} - Blocked the bot.")
         await db.delete_user(user_id)
         return False, "Blocked"
     except PeerIdInvalid:
@@ -162,18 +163,18 @@ async def groups_broadcast(chat_id, message, is_pin):
         return "Success"
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        return await groups_broadcast(chat_id, message)
+        return await groups_broadcast(chat_id, message, is_pin)
     except Exception as e:
         await db.delete_chat(chat_id)
         return "Error"
 
-async def get_settings(group_id , pm_mode = False):
+async def get_settings(group_id, pm_mode=False):
     if pm_mode:
         return SETTINGS.copy()
     else:
         settings = await db.get_settings(group_id)
     return settings 
-    
+
 async def save_group_settings(group_id, key, value):
     current = await get_settings(group_id)
     current.update({key: value})
@@ -201,8 +202,7 @@ def list_to_str(k):
     else:
         return ', '.join(str(item) for item in k)
 
-
-async def get_shortlink(link, grp_id, is_second_shortener=False, is_third_shortener=False , pm_mode=False):
+async def get_shortlink(link, grp_id, is_second_shortener=False, is_third_shortener=False, pm_mode=False):
     if not pm_mode:
         settings = await get_settings(grp_id)
     else:
@@ -239,10 +239,6 @@ def get_file_id(message: "Message") -> Any:
             if media:
                 setattr(media, "message_type", attr)
                 return media
-
-#def get_hash(media_msg: Message) -> str:
-#    media = get_file_id(media_msg)
- #   return getattr(media, "file_unique_id", "")[:6]
 
 def get_status():
     tz = pytz.timezone('Asia/Colombo')
